@@ -4,10 +4,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.stereotype.*;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+@SpringBootApplication
 @RestController
 @RequestMapping("/calcengine")
-public class Engine 
+public class Engine extends SpringBootServletInitializer 
 {
 	
     @GetMapping
@@ -15,8 +19,16 @@ public class Engine
         return "This is a Calc Engine and its used to perform complex calculations!";
     }
 
-    public static void main(String[] args) throws Exception {
+    
+     @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Engine.class);
+    }
+
+    public static void main(String[] args) {
         SpringApplication.run(Engine.class, args);
     }
+    
+    
 
 }
