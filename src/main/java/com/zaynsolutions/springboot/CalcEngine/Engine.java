@@ -16,14 +16,10 @@ public class Engine extends SpringBootServletInitializer
 	
     @GetMapping
     String home() {
-        return "This is a Calc Engine and its used to perform complex calculations!";
+        return "This is a Calc Engine and its used to perform complex calculations! Adeel";
     }
 
-    
-     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Engine.class);
-    }
+
 
     public static void main(String[] args) {
         SpringApplication.run(Engine.class, args);
