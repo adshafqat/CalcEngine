@@ -10,7 +10,7 @@ public class Engine
 {
 	
 
-    @RequestMapping("/")
+    @RequestMapping("/engine")
     @ResponseBody
     String home() {
         return "This is a Calc Engine and its used to perform complex calculations!";
