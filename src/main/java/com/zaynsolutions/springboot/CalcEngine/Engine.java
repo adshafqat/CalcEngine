@@ -16,6 +16,7 @@ public class Engine extends SpringBootServletInitializer
 	
     @GetMapping
     String home() {
+        System.out.println("Hi, I am printing a String");
         return "This is a Calc Engine and its used to perform complex calculations! Adeel";
     }
 
